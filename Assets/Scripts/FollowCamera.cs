@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Runtime.InteropServices;
+using UnityEngine.AI;
 
 [AddComponentMenu("Camera-Control/Mouse Orbit with zoom")]
 public class FollowCamera : MonoBehaviour

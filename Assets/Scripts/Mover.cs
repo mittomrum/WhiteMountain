@@ -16,12 +16,15 @@ public class Mover : MonoBehaviour
             MoveToCursor();
         }
         #endregion
+
+        UpdateAnimator();
         #region Debug
         if (targetPosition !=  null)
         {
             Debug.DrawRay(transform.position, targetPosition - transform.position, Color.red, 0.1f);
         }
         #endregion
+
     }
     private void MoveToCursor()
     {
@@ -34,6 +37,12 @@ public class Mover : MonoBehaviour
             GetComponent<NavMeshAgent>().destination = hit.point;
         }
     }
-
+    private void UpdateAnimator()
+    {
+        Vector3 velocity = GetComponent<NavMeshAgent>().velocity;
+        Vector3 localVelocity = transform.InverseTransformDirection(velocity);
+        float speed = localVelocity.z;
+        GetComponent<Animator>().SetFloat("forwardSpeed", speed);
+    }
 
 }
