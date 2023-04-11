@@ -5,16 +5,7 @@ using UnityEngine.AI;
 
 public class Mover : MonoBehaviour
 {
-    [SerializeField] private Transform target;
     private Vector3 targetPosition;
-
-    void Start()
-    {
-        if (target == null)
-        {
-            Debug.LogError("No Target added in the inspector!");
-        }
-    }
 
     // Update is called once per frame
     void Update()
