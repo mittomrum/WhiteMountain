@@ -25,7 +25,11 @@ public class FollowCamera : MonoBehaviour
     // Use this for initialization
 
     void Awake()
-    {
+    {   
+        if (cam == null)
+        {
+            GameObject cam = GameObject.FindWithTag("MainCamera");
+        }
         if (target == null)
         {
             Debug.Log("No target set for camera to follow");
